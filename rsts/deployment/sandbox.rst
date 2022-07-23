@@ -133,9 +133,9 @@ Flyte configuration on your remote cluster.
 
     kubectl get ingress -n flyte
 
-#. In order to interact with your Flyte instance using ``flytectl``, initialise your configuration to point to this host ::
+#. In order to interact with your Flyte instance using ``flytectl``, initialise your configuration to point to this host.  You need to specify the port even if it is port 80, for GRPC to work properly.  Ex. 192.168.100.10:80  ::
 
-    flytectl config init --host='<CONTOUR_URL>' --insecure
+    flytectl config init --host='<CONTOUR_URL>:<CONTOUR_PORT>' --insecure
 
 #. Get Minio & Kubernetes dashboard LB URL by running ::
 
